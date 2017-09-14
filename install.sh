@@ -3,18 +3,10 @@
 export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
-apt-get clean && apt-get update -qq
-apt-get install -qq locales=2.23-0ubuntu9
-
-dpkg-divert --local --rename --add /sbin/initctl
-locale-gen en_US en_US.UTF-8
-dpkg-reconfigure locales
-
-echo "HOME=$HOME"
-cd /u16
-
+apt-get clean && apt-get update 
+apt-get install:
 echo "================= Updating package lists ==================="
-apt-get update -qq
+apt-get update
 
 echo "================= Adding some global settings ==================="
 mv gbl_env.sh /etc/profile.d/
@@ -24,7 +16,7 @@ mv 90forceyes /etc/apt/apt.conf.d/
 touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
-apt-get install -qq -y \
+apt-get install -y \
   build-essential=12.1ubuntu2 \
   curl=7.47.0-1ubuntu2.2 \
   gcc=4:5.3.1-1ubuntu1 \
@@ -46,25 +38,25 @@ apt-get install -qq -y \
   vim=2:7.4.1689-3ubuntu1.2
 
 echo "================= Installing Python packages ==================="
-apt-get install -qq -y \
+apt-get install -y \
   python-pip=8.1.1-2ubuntu0.4 \
   python-software-properties=0.96.20.7 \
   python-dev=2.7.11-1
 
-pip install -q virtualenv
+pip install virtualenv
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -qq -y git=1:2.14.1-1.1~ppa0~ubuntu16.04.1
+apt-get install -y git=1:2.14.1-1.1~ppa0~ubuntu16.04.1
 
 # echo "================= Installing Git LFS ==================="
 # curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-# sudo apt-get install -qq git-lfs=2.0.1
+# sudo apt-get install git-lfs=2.0.1
 # git lfs install
 
 echo "================= Adding JQ 1.5.1 ==================="
-apt-get install -qq jq=1.5+dfsg-1
+apt-get install jq=1.5+dfsg-1
 
 echo "================= Installing Node 7.x ==================="
 . /u16/node/install.sh
@@ -80,7 +72,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update -qq && sudo apt-get install -qq google-cloud-sdk=160.0.0-0
+sudo apt-get update && sudo apt-get install google-cloud-sdk=160.0.0-0
 
 KUBECTL_VERSION=1.5.1
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
@@ -90,18 +82,18 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
 echo "================= Adding awscli 1.11.91 ============"
-sudo pip install -q 'awscli==1.11.91'
+sudo pip install 'awscli==1.11.91'
 
 echo "================= Adding awsebcli 3.9.0 ============"
-sudo pip install -q 'awsebcli==3.9.0'
+sudo pip install 'awsebcli==3.9.0'
 
 # AZURE_CLI_VERSION=0.2.8-1
 # echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 # echo "deb [arch=arm64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
 #   sudo tee /etc/apt/sources.list.d/azure-cli.list
 # sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
-# sudo apt-get install -qq apt-transport-https=1.2.24
-# sudo apt-get update -qq && sudo apt-get install -qq azure-cli=$AZURE_CLI_VERSION
+# sudo apt-get install apt-transport-https=1.2.24
+# sudo apt-get update && sudo apt-get install azure-cli=$AZURE_CLI_VERSION
 
 # echo "================= Adding doctl 1.6.0 ============"
 # curl -OL https://github.com/digitalocean/doctl/releases/download/v1.6.0/doctl-1.6.0-linux-arm64.tar.gz
@@ -116,19 +108,19 @@ sudo pip install -q 'awsebcli==3.9.0'
 # mv jfrog /usr/bin/jfrog
 
 echo "================ Adding ansible 2.3.0.0 ===================="
-sudo pip install -q 'ansible==2.3.0.0'
+sudo pip install 'ansible==2.3.0.0'
 
 echo "================ Adding boto 2.46.1 ======================="
-sudo pip install -q 'boto==2.46.1'
+sudo pip install 'boto==2.46.1'
 
 echo "================ Adding apache-libcloud 2.0.0 ======================="
-sudo pip install -q 'apache-libcloud==2.0.0'
+sudo pip install 'apache-libcloud==2.0.0'
 
 echo "================ Adding azure 2.0.0rc5 ======================="
-sudo pip install -q 'azure==2.0.0rc5'
+sudo pip install 'azure==2.0.0rc5'
 
 echo "================ Adding dopy 0.3.7a ======================="
-sudo pip install -q 'dopy==0.3.7a'
+sudo pip install 'dopy==0.3.7a'
 
 export TF_VERSION=0.8.7
 echo "================ Adding terraform- $TF_VERSION  ===================="
