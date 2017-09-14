@@ -50,11 +50,6 @@ add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
 apt-get install -y git=1:2.14.1-1.1~ppa0~ubuntu16.04.1
 
-# echo "================= Installing Git LFS ==================="
-# curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-# sudo apt-get install git-lfs=2.0.1
-# git lfs install
-
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install jq=1.5+dfsg-1
 
@@ -86,26 +81,6 @@ sudo pip install 'awscli==1.11.91'
 
 echo "================= Adding awsebcli 3.9.0 ============"
 sudo pip install 'awsebcli==3.9.0'
-
-# AZURE_CLI_VERSION=0.2.8-1
-# echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
-# echo "deb [arch=arm64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
-#   sudo tee /etc/apt/sources.list.d/azure-cli.list
-# sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
-# sudo apt-get install apt-transport-https=1.2.24
-# sudo apt-get update && sudo apt-get install azure-cli=$AZURE_CLI_VERSION
-
-# echo "================= Adding doctl 1.6.0 ============"
-# curl -OL https://github.com/digitalocean/doctl/releases/download/v1.6.0/doctl-1.6.0-linux-arm64.tar.gz
-# tar xf doctl-1.6.0-linux-arm64.tar.gz
-# sudo mv ~/doctl /usr/local/bin
-# rm doctl-1.6.0-linux-arm64.tar.gz
-
-# JFROG_VERSION=1.7.0
-# echo "================= Adding jfrog-cli $JFROG_VERSION  ==================="
-# wget -nv https://api.bintray.com/content/jfrog/jfrog-cli-go/"$JFROG_VERSION"/jfrog-cli-linux-arm64/jfrog?bt_package=jfrog-cli-linux-arm64 -O jfrog
-# sudo chmod +x jfrog
-# mv jfrog /usr/bin/jfrog
 
 echo "================ Adding ansible 2.3.0.0 ===================="
 sudo pip install 'ansible==2.3.0.0'
