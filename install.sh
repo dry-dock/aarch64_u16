@@ -105,38 +105,6 @@ sudo pip install 'azure==2.0.0rc5'
 echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
 
-export TF_VERSION=0.8.7
-echo "================ Adding terraform- $TF_VERSION  ===================="
-export TF_FILE=terraform_"$TF_VERSION"_linux_arm.zip
-
-echo "Fetching terraform"
-echo "-----------------------------------"
-rm -rf /tmp/terraform
-mkdir -p /tmp/terraform
-wget -nv https://releases.hashicorp.com/terraform/$TF_VERSION/$TF_FILE
-unzip -o $TF_FILE -d /tmp/terraform
-sudo chmod +x /tmp/terraform/terraform
-mv /tmp/terraform/terraform /usr/bin/terraform
-
-echo "Added terraform successfully"
-echo "-----------------------------------"
-
-export PK_VERSION=0.12.2
-echo "================ Adding packer $PK_VERSION  ===================="
-export PK_FILE=packer_"$PK_VERSION"_linux_arm.zip
-
-echo "Fetching packer"
-echo "-----------------------------------"
-rm -rf /tmp/packer
-mkdir -p /tmp/packer
-wget -nv https://releases.hashicorp.com/packer/$PK_VERSION/$PK_FILE
-unzip -o $PK_FILE -d /tmp/packer
-sudo chmod +x /tmp/packer/packer
-mv /tmp/packer/packer /usr/bin/packer
-
-echo "Added packer successfully"
-echo "-----------------------------------"
-
 echo "================= Intalling Shippable CLIs ================="
 echo "Installing shippable_decrypt"
 cp /u16/shippable_decrypt /usr/local/bin/shippable_decrypt
