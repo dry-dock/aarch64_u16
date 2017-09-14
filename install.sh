@@ -139,9 +139,6 @@ cp /u16/shippable_retry /usr/local/bin/shippable_retry
 echo "Installing shippable_replace"
 cp /u16/shippable_replace /usr/local/bin/shippable_replace
 
-echo "Installing shippable_jdk"
-cp /u16/shippable_jdk /usr/local/bin/shippable_jdk
-
 echo "Installing shipctl"
 cp /u16/shipctl /usr/local/bin/shipctl
 
