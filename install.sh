@@ -4,7 +4,15 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update 
-apt-get install:
+apt-get install -qq locales=2.23-0ubuntu9
+
+dpkg-divert --local --rename --add /sbin/initctl
+locale-gen en_US en_US.UTF-8
+dpkg-reconfigure locales
+
+echo "HOME=$HOME"
+cd /u16
+
 echo "================= Updating package lists ==================="
 apt-get update
 
