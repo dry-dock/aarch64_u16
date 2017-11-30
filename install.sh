@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
-apt-get clean && apt-get update 
+apt-get clean && apt-get update
 apt-get install -qq locales=2.23-0ubuntu9
 
 dpkg-divert --local --rename --add /sbin/initctl
@@ -106,20 +106,10 @@ echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
 
 echo "================= Intalling Shippable CLIs ================="
-echo "Installing shippable_decrypt"
-cp /u16/shippable_decrypt /usr/local/bin/shippable_decrypt
 
-echo "Installing shippable_retry"
-cp /u16/shippable_retry /usr/local/bin/shippable_retry
-
-echo "Installing shippable_replace"
-cp /u16/shippable_replace /usr/local/bin/shippable_replace
-
-echo "Installing shipctl"
-cp /u16/shipctl /usr/local/bin/shipctl
-
-echo "Installing utility.sh"
-cp /u16/utility.sh /usr/local/bin/utility.sh
+git clone https://github.com/Shippable/node.git nodeRepo
+./nodeRepo/shipctl/aarch64/Ubuntu_16.04/install.sh
+rm -rf nodeRepo
 
 echo "Installed Shippable CLIs successfully"
 echo "-------------------------------------"
