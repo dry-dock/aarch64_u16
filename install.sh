@@ -26,7 +26,7 @@ touch "$HOME/.ssh/known_hosts"
 echo "================= Installing basic packages ==================="
 apt-get install -y \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.2 \
+  curl=7.47.0-1ubuntu2.5 \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
@@ -35,12 +35,12 @@ apt-get install -y \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.6 \
+  openssl=1.0.2g-1ubuntu4.9 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
   unzip=6.0-20ubuntu1 \
-  wget=1.17.1-1ubuntu1.1 \
+  wget=1.17.1-1ubuntu1.3 \
   rsync=3.1.1-3ubuntu1 \
   psmisc=22.21-2.1build1 \
   vim=2:7.4.1689-3ubuntu1.2
