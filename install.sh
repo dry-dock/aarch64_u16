@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
-apt-get clean && apt-get update 
+apt-get clean && apt-get update
 apt-get install -qq locales=2.23-0ubuntu9
 
 dpkg-divert --local --rename --add /sbin/initctl
@@ -26,7 +26,7 @@ touch "$HOME/.ssh/known_hosts"
 echo "================= Installing basic packages ==================="
 apt-get install -y \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.2 \
+  curl=7.47.0-1ubuntu2.5 \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
@@ -35,12 +35,12 @@ apt-get install -y \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.6 \
+  openssl=1.0.2g-1ubuntu4.9 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
   unzip=6.0-20ubuntu1 \
-  wget=1.17.1-1ubuntu1.1 \
+  wget=1.17.1-1ubuntu1.3 \
   rsync=3.1.1-3ubuntu1 \
   psmisc=22.21-2.1build1 \
   vim=2:7.4.1689-3ubuntu1.2
@@ -56,7 +56,7 @@ pip install virtualenv
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y git=1:2.14*
+apt-get install -y git=1:2.15.0-1~ppa0~ubuntu16.04.1
 
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install jq=1.5+dfsg-1
@@ -106,20 +106,10 @@ echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
 
 echo "================= Intalling Shippable CLIs ================="
-echo "Installing shippable_decrypt"
-cp /u16/shippable_decrypt /usr/local/bin/shippable_decrypt
 
-echo "Installing shippable_retry"
-cp /u16/shippable_retry /usr/local/bin/shippable_retry
-
-echo "Installing shippable_replace"
-cp /u16/shippable_replace /usr/local/bin/shippable_replace
-
-echo "Installing shipctl"
-cp /u16/shipctl /usr/local/bin/shipctl
-
-echo "Installing utility.sh"
-cp /u16/utility.sh /usr/local/bin/utility.sh
+git clone https://github.com/Shippable/node.git nodeRepo
+./nodeRepo/shipctl/aarch64/Ubuntu_16.04/install.sh
+rm -rf nodeRepo
 
 echo "Installed Shippable CLIs successfully"
 echo "-------------------------------------"
