@@ -56,7 +56,7 @@ pip install virtualenv
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y git=1:2.15.0-1~ppa0~ubuntu16.04.1
+apt-get install -y git=1:2.15.1-1~ppa0~ubuntu16.04.1
 
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install jq=1.5+dfsg-1
