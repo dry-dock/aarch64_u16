@@ -30,12 +30,12 @@ apt-get install -y \
   gcc=4:5.3.1-1ubuntu1 \
   gettext=0.19.7-2ubuntu3 \
   htop=2.0.1-1ubuntu1 \
-  libxml2-dev=2.9.3+dfsg1-1ubuntu0.4 \
+  libxml2-dev=2.9.3+dfsg1-1ubuntu0.5 \
   libxslt1-dev=1.1.28-2.1ubuntu0.1 \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.9 \
+  openssl=11.0.2g-1ubuntu4.10 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
@@ -56,7 +56,7 @@ pip install virtualenv
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y git=1:2.15.1-1~ppa0~ubuntu16.04.1
+apt-get install -y git=1:2.7.4-0ubuntu1.3
 
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install jq=1.5+dfsg-1
