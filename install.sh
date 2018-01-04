@@ -35,7 +35,7 @@ apt-get install -y \
   make=4.1-6 \
   nano=2.5.3-2ubuntu2 \
   openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=11.0.2g-1ubuntu4.10 \
+  openssl=1.0.2g-1ubuntu4.10 \
   software-properties-common=0.96.20.7 \
   sudo=1.8.16-0ubuntu1.4  \
   texinfo=6.1.0.dfsg.1-5 \
