@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
-apt-get install -qq locales=2.23-0ubuntu9
+apt-get install -qq locales=2.23*
 
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
@@ -24,42 +24,42 @@ mv 90forceyes /etc/apt/apt.conf.d/
 touch "$HOME/.ssh/known_hosts"
 
 echo "================= Installing basic packages ==================="
-apt-get install -y \
+apt-get install -y -q \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0-1ubuntu2.5 \
-  gcc=4:5.3.1-1ubuntu1 \
-  gettext=0.19.7-2ubuntu3 \
-  htop=2.0.1-1ubuntu1 \
-  libxml2-dev=2.9.3+dfsg1-1ubuntu0.5 \
-  libxslt1-dev=1.1.28-2.1ubuntu0.1 \
-  make=4.1-6 \
-  nano=2.5.3-2ubuntu2 \
-  openssh-client=1:7.2p2-4ubuntu2.1 \
-  openssl=1.0.2g-1ubuntu4.10 \
+  curl=7.47.0* \
+  gcc=4:5.3.1* \
+  gettext=0.19.7* \
+  htop=2.0.1* \
+  libxml2-dev=2.9.3+dfsg1* \
+  libxslt1-dev=1.1.28* \
+  make=4.1* \
+  nano=2.5.3* \
+  openssh-client=1:7.2p2* \
+  openssl=1.0.2g* \
   software-properties-common=0.96.20.7 \
-  sudo=1.8.16-0ubuntu1.4  \
-  texinfo=6.1.0.dfsg.1-5 \
-  unzip=6.0-20ubuntu1 \
-  wget=1.17.1-1ubuntu1.3 \
-  rsync=3.1.1-3ubuntu1 \
-  psmisc=22.21-2.1build1 \
-  vim=2:7.4.1689-3ubuntu1.2
+  sudo=1.8.16*  \
+  texinfo=6.1.0.dfsg.1* \
+  unzip=6.0* \
+  wget=1.17.1* \
+  rsync=3.1.1* \
+  psmisc=22.21* \
+  vim=2:7.4.1689*
 
 echo "================= Installing Python packages ==================="
-apt-get install -y \
-  python-pip=8.1.1-2ubuntu0.4 \
+apt-get install -y -q \
+  python-pip=8.1.1* \
   python-software-properties=0.96.20.7 \
-  python-dev=2.7.11-1
+  python-dev=2.7.11*
 
 pip install virtualenv
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y git=1:2.15.*
+apt-get install -y -q git=1:2.15.*
 
 echo "================= Adding JQ 1.5.1 ==================="
-apt-get install jq=1.5+dfsg-1
+apt-get install -y -q jq=1.5+dfsg*
 
 echo "================= Installing Node 7.x ==================="
 . /u16/node/install.sh
