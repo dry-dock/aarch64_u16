@@ -5,7 +5,7 @@ apt-get install -qq default-jre=2:1.8*
 apt-get install -qq default-jdk=2:1.8*
 
 echo "================= Installing openjdk-8-jdk ==================="
-add-apt-repository -y -q ppa:openjdk-r/ppa
+add-apt-repository -y ppa:openjdk-r/ppa
 apt-get update -qq
 apt-get install -qq -y openjdk-8-jdk=8u151*
 update-alternatives --set java /usr/lib/jvm/java-8-openjdk-arm64/jre/bin/java
