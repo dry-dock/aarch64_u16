@@ -49,14 +49,14 @@ echo "================= Installing Python packages ==================="
 apt-get install -y -q \
   python-pip=8.1.1* \
   python-software-properties=0.96.20.7 \
-  python-dev=2.7.11*
+  python-dev=2.7.12*
 
 pip install virtualenv
 
 echo "================= Installing Git ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y -q git=1:2.16.1*
+apt-get install -y -q git=1:2.16.2*
 
 echo "================= Adding JQ 1.5.1 ==================="
 apt-get install -y -q jq=1.5+dfsg*
