@@ -96,6 +96,9 @@ sudo pip install 'ansible==2.3.0.0'
 echo "================ Adding boto 2.46.1 ======================="
 sudo pip install 'boto==2.46.1'
 
+echo "================ Adding boto3 ======================="
+sudo pip install 'boto3==1.5.15'
+
 echo "================ Adding apache-libcloud 2.0.0 ======================="
 sudo pip install 'apache-libcloud==2.0.0'
 
@@ -104,6 +107,22 @@ sudo pip install 'azure==2.0.0rc5'
 
 echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
+
+export PK_VERSION=1.2.0
+echo "================ Adding packer $PK_VERSION  ===================="
+export PK_FILE=packer_"$PK_VERSION"_linux_arm64.zip
+
+echo "Fetching packer"
+echo "-----------------------------------"
+rm -rf /tmp/packer
+mkdir -p /tmp/packer
+wget -nv https://releases.hashicorp.com/packer/$PK_VERSION/$PK_FILE
+unzip -o $PK_FILE -d /tmp/packer
+sudo chmod +x /tmp/packer/packer
+mv /tmp/packer/packer /usr/bin/packer
+
+echo "Added packer successfully"
+echo "-----------------------------------"
 
 echo "================= Intalling Shippable CLIs ================="
 
