@@ -66,7 +66,7 @@ apt-get install -y -q jq=1.5+dfsg*
 echo "================= Installing Node 8.x ==================="
 . /u16/node/install.sh
 
-echo "================= Installing Java 2.8.0 ==================="
+echo "================= Installing Java 1.8.0 ==================="
 . /u16/java/install.sh
 
 echo "================= Installing Ruby 2.5.1  ==================="
