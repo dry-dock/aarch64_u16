@@ -95,8 +95,8 @@ sudo pip install 'awsebcli==3.12.4'
 echo "================ Adding ansible 2.4.3.0 ===================="
 sudo pip install 'ansible==2.4.3.0'
 
-echo "================ Adding boto 2.48.1 ======================="
-sudo pip install 'boto==2.48.1'
+echo "================ Adding boto 2.48.0 ======================="
+sudo pip install 'boto==2.48.0'
 
 echo "================ Adding boto3 ======================="
 sudo pip install 'boto3==1.7.3'
@@ -104,8 +104,8 @@ sudo pip install 'boto3==1.7.3'
 echo "================ Adding apache-libcloud 2.3.0 ======================="
 sudo pip install 'apache-libcloud==2.3.0'
 
-echo "================ Adding azure 2.0.0rc5 ======================="
-sudo pip install 'azure==3.0.0rc5'
+echo "================ Adding azure 3.0.0 ======================="
+sudo pip install 'azure==3.0.0'
 
 echo "================ Adding dopy 0.3.7a ======================="
 sudo pip install 'dopy==0.3.7a'
