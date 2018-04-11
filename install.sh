@@ -41,7 +41,7 @@ apt-get install -y -q \
   sudo=1.8.16*  \
   texinfo=6.1.0.dfsg.1* \
   unzip=6.0* \
-  zip=3.0* \ 
+  zip=3.0* \
   wget=1.17.1* \
   rsync=3.1.1* \
   psmisc=22.21* \
