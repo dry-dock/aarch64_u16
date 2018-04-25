@@ -49,9 +49,9 @@ apt-get install -y -q \
 
 echo "================= Installing Python packages ==================="
 apt-get install -y -q \
-  python-pip=8.1.1* \
-  python-software-properties=0.96.20.7 \
-  python-dev=2.7.12*
+  python-pip=8.1* \
+  python-software-properties=0.96* \
+  python-dev=2.7*
 
 pip install virtualenv
 
@@ -61,7 +61,7 @@ apt-get update -qq
 apt-get install -y -q git=1:2.17.0*
 
 echo "================= Adding JQ 1.5.1 ==================="
-apt-get install -y -q jq=1.5+dfsg*
+apt-get install -y -q jq=1.5*
 
 echo "================= Installing Node 8.x ==================="
 . /u16/node/install.sh
@@ -77,7 +77,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=196.0.0-0
+sudo apt-get update && sudo apt-get install google-cloud-sdk=196.*
 
 KUBECTL_VERSION=1.9.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
