@@ -27,25 +27,25 @@ mkdir -p /etc/drydock
 echo "================= Installing basic packages ==================="
 apt-get install -y -q \
   build-essential=12.1ubuntu2 \
-  curl=7.47.0* \
-  gcc=4:5.3.1* \
-  gettext=0.19.7* \
-  htop=2.0.1* \
-  libxml2-dev=2.9.3+dfsg1* \
-  libxslt1-dev=1.1.28* \
+  curl=7.47* \
+  gcc=4:5.3* \
+  gettext=0.19* \
+  htop=2.0* \
+  libxml2-dev=2.9* \
+  libxslt1-dev=1.1* \
   make=4.1* \
-  nano=2.5.3* \
-  openssh-client=1:7.2p2* \
-  openssl=1.0.2g* \
-  software-properties-common=0.96.20.7 \
-  sudo=1.8.16*  \
-  texinfo=6.1.0.dfsg.1* \
+  nano=2.5* \
+  openssh-client=1:7* \
+  openssl=1.0* \
+  software-properties-common=0.96* \
+  sudo=1.8*  \
+  texinfo=6.1* \
   unzip=6.0* \
   zip=3.0* \
-  wget=1.17.1* \
-  rsync=3.1.1* \
+  wget=1.17* \
+  rsync=3.1* \
   psmisc=22.21* \
-  vim=2:7.4.1689*
+  vim=2:7.4.*
 
 echo "================= Installing Python packages ==================="
 apt-get install -y -q \
@@ -91,6 +91,10 @@ sudo pip install 'awscli==1.15.3'
 
 echo "================= Adding awsebcli 3.12.4 ============"
 sudo pip install 'awsebcli==3.12.4'
+
+echo "================= Adding openstack client 3.15.0 ============"
+sudo pip install 'python-openstackclient==3.15.0'
+sudo pip install 'shade==1.27.1'
 
 echo "================ Adding ansible 2.4.3.0 ===================="
 sudo pip install 'ansible==2.4.3.0'
