@@ -116,7 +116,7 @@ sudo pip install 'dopy==0.3.7'
 
 export PK_VERSION=1.2.3
 echo "================ Adding packer $PK_VERSION  ===================="
-export PK_FILE=packer_"$PK_VERSION"_linux_arm64.zip
+export PK_FILE=packer_"$PK_VERSION"_linux_arm.zip
 
 echo "Fetching packer"
 echo "-----------------------------------"
