@@ -77,33 +77,33 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=196.*
+sudo apt-get update && sudo apt-get install google-cloud-sdk=200.0.0
 
-KUBECTL_VERSION=1.9.0
+KUBECTL_VERSION=1.10.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/arm64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-echo "================= Adding awscli 1.15.3 ============"
-sudo pip install 'awscli==1.15.3'
+echo "================= Adding awscli 1.15.14 ============"
+sudo pip install 'awscli==1.15.14'
 
 echo "================= Adding awsebcli 3.12.4 ============"
 sudo pip install 'awsebcli==3.12.4'
 
 echo "================= Adding openstack client 3.15.0 ============"
 sudo pip install 'python-openstackclient==3.15.0'
-sudo pip install 'shade==1.27.1'
+sudo pip install 'shade==1.28.0'
 
-echo "================ Adding ansible 2.4.3.0 ===================="
-sudo pip install 'ansible==2.4.3.0'
+echo "================ Adding ansible 2.5.2 ===================="
+sudo pip install 'ansible==2.5.2'
 
 echo "================ Adding boto 2.48.0 ======================="
 sudo pip install 'boto==2.48.0'
 
 echo "================ Adding boto3 ======================="
-sudo pip install 'boto3==1.7.3'
+sudo pip install 'boto3==1.7.16'
 
 echo "================ Adding apache-libcloud 2.3.0 ======================="
 sudo pip install 'apache-libcloud==2.3.0'
@@ -111,10 +111,10 @@ sudo pip install 'apache-libcloud==2.3.0'
 echo "================ Adding azure 3.0.0 ======================="
 sudo pip install 'azure==3.0.0'
 
-echo "================ Adding dopy 0.3.7a ======================="
-sudo pip install 'dopy==0.3.7a'
+echo "================ Adding dopy 0.3.7 ======================="
+sudo pip install 'dopy==0.3.7'
 
-export PK_VERSION=1.2.2
+export PK_VERSION=1.2.3
 echo "================ Adding packer $PK_VERSION  ===================="
 export PK_FILE=packer_"$PK_VERSION"_linux_arm64.zip
 
