@@ -82,7 +82,6 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk=200.0*
 KUBECTL_VERSION=1.10.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
-curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v1.5.1/bin/linux/arm64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
