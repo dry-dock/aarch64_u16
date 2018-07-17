@@ -79,7 +79,7 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk=207.0*
 
-KUBECTL_VERSION=1.11.1
+KUBECTL_VERSION=1.11.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
 chmod +x ./kubectl
