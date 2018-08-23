@@ -66,7 +66,7 @@ apt-get install -y -q jq=1.5*
 echo "================= Installing Node 8.x ==================="
 . /u16/node/install.sh
 
-echo "================= Installing Java 1.8.0 ==================="
+echo "================= Installing Java 10.0.2 ==================="
 . /u16/java/install.sh
 
 echo "================= Installing Ruby 2.5.1  ==================="
@@ -77,7 +77,7 @@ echo "================= Adding gcloud ============"
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-sudo apt-get update && sudo apt-get install google-cloud-sdk=207.0*
+sudo apt-get update && sudo apt-get install google-cloud-sdk=211.0*
 
 KUBECTL_VERSION=1.11.0
 echo "================= Adding kubectl $KUBECTL_VERSION ==================="
@@ -85,24 +85,24 @@ curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-echo "================= Adding awscli 1.15.55 ============"
-sudo pip install 'awscli==1.15.55'
+echo "================= Adding awscli 1.15.73 ============"
+sudo pip install 'awscli==1.15.73'
 
-echo "================= Adding awsebcli 3.14.2 ============"
-sudo pip install 'awsebcli==3.14.2'
+echo "================= Adding awsebcli 3.14.3 ============"
+sudo pip install 'awsebcli==3.14.3'
 
-echo "================= Adding openstack client 3.15.0 ============"
-sudo pip install 'python-openstackclient==3.15.0'
-sudo pip install 'shade==1.28.0'
+echo "================= Adding openstack client 3.16.0 ============"
+sudo pip install 'python-openstackclient==3.16.0'
+sudo pip install 'shade==1.29.0'
 
-echo "================ Adding ansible 2.6.1 ===================="
-sudo pip install 'ansible==2.6.1'
+echo "================ Adding ansible 2.6.2 ===================="
+sudo pip install 'ansible==2.6.2'
 
-echo "================ Adding boto 2.48.0 ======================="
-sudo pip install 'boto==2.48.0'
+echo "================ Adding boto 2.49.0 ======================="
+sudo pip install 'boto==2.49.0'
 
 echo "================ Adding boto3 ======================="
-sudo pip install 'boto3==1.7.54'
+sudo pip install 'boto3==1.7.72'
 
 echo "================ Adding apache-libcloud 2.3.0 ======================="
 sudo pip install 'apache-libcloud==2.3.0'
@@ -113,9 +113,9 @@ sudo pip install 'azure==3.0.0'
 echo "================ Adding dopy 0.3.7 ======================="
 sudo pip install 'dopy==0.3.7'
 
-export PK_VERSION=1.2.2
+export PK_VERSION=1.2.5
 echo "================ Adding packer $PK_VERSION  ===================="
-export PK_FILE=packer_"$PK_VERSION"_linux_arm64.zip
+export PK_FILE=packer_"$PK_VERSION"_linux_arm.zip
 
 echo "Fetching packer"
 echo "-----------------------------------"
