@@ -8,9 +8,10 @@ echo "================= Installing openjdk-10-jdk ==================="
 add-apt-repository -y ppa:openjdk-r/ppa
 apt-get update -qq
 apt-get install -qq -y openjdk-10-jdk
-update-alternatives --set java /usr/lib/jvm/java-10-openjdk-arm64/jre/bin/java
-update-alternatives --set javac /usr/lib/jvm/java-10-openjdk-arm64/bin/javac
-add-apt-repository -y ppa:maarten-fonville/ppa
-apt-get update -qq
-apt-get install -qq icedtea-10-plugin=1.6*
-update-alternatives --set javaws /usr/lib/jvm/java-10-openjdk-arm64/jre/bin/javaws
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-10-openjdk-amd64/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-10-openjdk-amd64/bin/javac 1
+sudo update-alternatives --set java /usr/lib/jvm/java-10-openjdk-amd64/bin/java
+sudo update-alternatives --set javac /usr/lib/jvm/java-10-openjdk-amd64/bin/javac
+
+
+
