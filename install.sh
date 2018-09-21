@@ -65,24 +65,24 @@ export JQ_VERSION=1.5*
 echo "================= Adding JQ $JQ_VERSION ================================="
 apt-get install -y -q jq="$JQ_VERSION"
 
-echo "================= Installing Node 8.x ==================================="
+echo "================= Installing Node 8.12.0 ================================"
 . /u16/node/install.sh
 
 echo "================= Installing Java 10.0.2 ================================"
 . /u16/java/install.sh
 
-echo "================= Installing Ruby 2.5.1  ================================="
+echo "================= Installing Ruby 2.5.1  ================================"
 . /u16/ruby/install.sh
 
 
-echo "================= Adding gcloud ==========================================="
+echo "================= Adding gcloud =========================================="
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk=211.0*
 
 KUBECTL_VERSION=1.11.0
-echo "================= Adding kubectl $KUBECTL_VERSION ==========================="
+echo "================= Adding kubectl $KUBECTL_VERSION ========================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
