@@ -55,12 +55,13 @@ apt-get install -y -q \
 
 pip install virtualenv
 
-echo "================= Installing Git ==================="
+export GIT_VERSION=1:2.*
+echo "================= Installing Git $GIT_VERSION ==================="
 add-apt-repository ppa:git-core/ppa -y
 apt-get update -qq
-apt-get install -y -q git=1:2.*
+apt-get install -y -q git="$GIT_VERSION"
 
-export JQ_VERSION=1.3*
+export JQ_VERSION=1.5*
 echo "================= Adding JQ $JQ_VERSION ==================="
 apt-get install -y -q jq="$JQ_VERSION"
 
