@@ -65,13 +65,13 @@ export JQ_VERSION=1.5*
 echo "================= Adding JQ $JQ_VERSION ================================="
 apt-get install -y -q jq="$JQ_VERSION"
 
-echo "================= Installing Node 8.12.0 ================================"
+echo "================= Installing Node  ================================"
 . /u16/node/install.sh
 
-echo "================= Installing Java 10.0.2 ================================"
+echo "================= Installing Java  ================================"
 . /u16/java/install.sh
 
-echo "================= Installing Ruby 2.5.1  ================================"
+echo "================= Installing Ruby  ================================"
 . /u16/ruby/install.sh
 
 
