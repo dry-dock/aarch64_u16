@@ -1,9 +1,8 @@
 #!/bin/bash -e
 
-echo "================= Installing openjdk-10-jdk ==================="
-add-apt-repository -y ppa:openjdk-r/ppa
-apt-get update -qq
-apt-get install -qq -y openjdk-10-jdk
-
-
+export OPENJDK_VERSION=11
+echo "================ Installing openjdk"$OPENJDK_VERSION"-installer ============================="
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt install -y openjdk-"$OPENJDK_VERSION"-jdk --allow-unauthenticated
 
