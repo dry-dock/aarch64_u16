@@ -74,20 +74,20 @@ echo "================= Installing Java  ================================"
 echo "================= Installing Ruby  ================================"
 . /u16/ruby/install.sh
 
-export CLOUD_SDKREPO=216.0*
+export CLOUD_SDKREPO=218.0*
 echo "================= Adding gcloud $CLOUD_SDK_REPO =========================================="
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk="$CLOUD_SDKREPO"
 
-KUBECTL_VERSION=1.11.0
+KUBECTL_VERSION=1.12.0
 echo "================= Adding kubectl $KUBECTL_VERSION ========================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-export AWS_VERSION=1.16.14
+export AWS_VERSION=1.16.24
 echo "================= Adding awscli $AWS_VERSION ================================"
 sudo pip install awscli=="$AWS_VERSION"
 
@@ -103,7 +103,7 @@ export SHADE_VERSION=1.29.0
 echo "================= Adding shade $SHADE_VERSION ================================="
 sudo pip install shade=="$SHADE_VERSION"
 
-export ANSIBLE_VERSION=2.6.4
+export ANSIBLE_VERSION=2.6.5
 echo "================ Adding ansible $ANSIBLE_VERSION =============================="
 sudo pip install ansible=="$ANSIBLE_VERSION"
 
@@ -111,7 +111,7 @@ export BOTO_VERSION=2.49.0
 echo "================ Adding boto $BOTO_VERSION ==================================="
 sudo pip install boto=="$BOTO_VERSION"
 
-export BOTO3_VERSION=1.9.4
+export BOTO3_VERSION=1.9.14
 echo "================ Adding boto3 $BOTO3_VERSION =================================="
 sudo pip install boto3=="$BOTO3_VERSION"
 
