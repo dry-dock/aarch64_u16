@@ -74,20 +74,20 @@ echo "================= Installing Java  ================================"
 echo "================= Installing Ruby  ================================"
 . /u16/ruby/install.sh
 
-export CLOUD_SDKREPO=218.0*
+export CLOUD_SDKREPO=222.0*
 echo "================= Adding gcloud $CLOUD_SDK_REPO =========================================="
 CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -sS https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk="$CLOUD_SDKREPO"
 
-KUBECTL_VERSION=1.12.0
+KUBECTL_VERSION=1.12.2
 echo "================= Adding kubectl $KUBECTL_VERSION ========================="
 curl -sSLO https://storage.googleapis.com/kubernetes-release/release/v"$KUBECTL_VERSION"/bin/linux/arm64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-export AWS_VERSION=1.16.24
+export AWS_VERSION=1.16.43
 echo "================= Adding awscli $AWS_VERSION ================================"
 sudo pip install awscli=="$AWS_VERSION"
 
@@ -99,11 +99,11 @@ export OPENSTACKCLIENT_VERSION=3.16.1
 echo "================= Adding openstack client $OPENSTACKCLIENT_VERSION ==========="
 sudo pip install python-openstackclient=="$OPENSTACKCLIENT_VERSION"
 
-export SHADE_VERSION=1.29.0
+export SHADE_VERSION=1.30.0
 echo "================= Adding shade $SHADE_VERSION ================================="
 sudo pip install shade=="$SHADE_VERSION"
 
-export ANSIBLE_VERSION=2.6.5
+export ANSIBLE_VERSION=2.7.1
 echo "================ Adding ansible $ANSIBLE_VERSION =============================="
 sudo pip install ansible=="$ANSIBLE_VERSION"
 
@@ -111,7 +111,7 @@ export BOTO_VERSION=2.49.0
 echo "================ Adding boto $BOTO_VERSION ==================================="
 sudo pip install boto=="$BOTO_VERSION"
 
-export BOTO3_VERSION=1.9.14
+export BOTO3_VERSION=1.9.33
 echo "================ Adding boto3 $BOTO3_VERSION =================================="
 sudo pip install boto3=="$BOTO3_VERSION"
 
@@ -127,7 +127,7 @@ export DOPY_VERSION=0.3.7
 echo "================ Adding dopy $DOPY_VERSION ====================================="
 sudo pip install dopy=="$DOPY_VERSION"
 
-export PK_VERSION=1.3.1
+export PK_VERSION=1.3.2
 echo "================ Adding packer $PK_VERSION  ====================================="
 export PK_FILE=packer_"$PK_VERSION"_linux_arm64.zip
 
